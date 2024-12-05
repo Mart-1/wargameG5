@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/style.css">
   <title>Infos Personnelles</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <script src="personal_info.js" defer></script>
 </head>
 <body>
   <nav>
@@ -13,11 +14,33 @@
     <a href="articles.html" class="switch-button">Articles</a>
     <a href="cart.html" class="switch-button">Panier</a>
   </nav>
+
   <div class="container">
-    <p><strong>Nom d'utilisateur:</strong> JohnDoe</p>
-    <p><strong>Email:</strong> john.doe@example.com</p>
-    <button>Modifier vos informations</button>
+    <!-- Section pour afficher les informations de l'utilisateur, cachée lors de la modification -->
+    <div id="infoSection">
+      <p><strong>Email:</strong> <span id="email"> </span></p>
+      <p><strong>Nom:</strong> <span id="nom"> </span></p>
+      <p><strong>Prenom:</strong> <span id="prenom"> </span></p>
+    </div>
+
+    <!-- Formulaire de modification -->
+    <form action="personal_info.php" method="POST" id="updateForm" style="display: none;">
+      <label for="nom">Nom:</label>
+      <input type="text" id="nom_input" name="nom"><br>
+
+      <label for="prenom">Prenom:</label>
+      <input type="text" id="prenom_input" name="prenom"><br>
+
+      <label for="password">Mot de passe:</label>
+      <input type="password" id="password_input" name="password"><br>
+
+      <button type="submit">Sauvegarder</button>
+    </form>
+
+    <!-- Bouton de modification -->
+    <button id="editButton" onclick="toggleEditForm()">Modifier vos informations</button>
   </div>
+
   <footer>
     <img src="../img/image.png" alt="Footer image">
   </footer>
