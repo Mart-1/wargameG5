@@ -14,7 +14,9 @@ if($requestResource == "login"){
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $data = connectionAccount($db, $email, $password);
+        $encodedPasswd = base64_encode($password);
+
+        $data = connectionAccount($db, $email, $encodedPasswd);
         if($data){
 
             // Generate a token
@@ -35,8 +37,8 @@ if($requestResource == "register"){
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $password_hash = password_hash($password, PASSWORD_DEFAULT);
-        $data = registerAccount($db, $firstname, $lastname, $email, $password_hash);
+        $encodedPasswd = base64_encode($password);
+        $data = registerAccount($db, $firstname, $lastname, $email, $encodedPasswd);
     }
 }
 

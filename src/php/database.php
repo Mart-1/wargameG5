@@ -13,7 +13,7 @@ function dbConnect(){
     return $conn;
 }
 
-function connectionAccount($conn, $email, $password) {
+function connectionAccount($conn, $email, $encodedPasswd) {
     try{
         $sql = "SELECT * FROM utilisateurs WHERE email = :email";
         $stmt = $conn->prepare($sql);
@@ -23,11 +23,11 @@ function connectionAccount($conn, $email, $password) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-            if (password_verify($password, $result["password"])) {
+            if ($result['password'] == $encodedPasswd) {
                 return $result;
             }
             else {
-                return $result;
+                return false;
             }
         }
         else {
@@ -56,6 +56,27 @@ function insertSessionToken($conn, $email, $token){
     }
     catch(PDOException $e) {
         // echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
+function removeSessionToken($conn, $token){
+    try{
+        $sql = "UPDATE utilisateurs
+                SET session_token = NULL
+                WHERE session_token = :token";
+
+        $stmt = $conn->prepare($sql);
+
+        $stmt->bindValue(':token', $token);
+
+        $stmt->execute();
+
+        return true;
+
+    }
+    catch(PDOException $e) {
+        echo "Error: " . $e->getMessage();
         return false;
     }
 }

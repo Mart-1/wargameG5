@@ -30,10 +30,10 @@ if($requestResource == "disconnect"){
         if (isset($_COOKIE['USERSESSION'])) {
             $token = $_COOKIE['USERSESSION'];
 
-            $data = removeSessionToken($db, null, $token);
+            $data = removeSessionToken($db, $token);
 
             if($data){
-                setcookie('USERSESSION', '', 0, '/', "/", true, true);
+                setcookie('USERSESSION', '', time() - 3600, '/', "localhost", true, true);
             }
         }
     }
