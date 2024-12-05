@@ -31,5 +31,5 @@ INSERT INTO produits (nom, description, prix) VALUES
 ('Mandarines', 'Mandarines juteuses et sucrées', '4.00€');
 
 INSERT INTO utilisateurs(nom, prenom, email, password) VALUES
-('root', 'root', 'root', 'root'),
+('flag', 'flag', 'flag', 'Flag{SQLi_is_fun}'),
 ('lobel', 'martin', 'martin@gmail.com', '$2y$10$1PaubEeosNqdTRwgTCIPjOp/0kZLGC7dZn9Gi26hr3X8Lach/Sim2');
