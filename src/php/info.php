@@ -23,7 +23,21 @@ if($requestResource == "cookieCheck"){
     }
 }
 
+if($requestResource == "disconnect"){
+    $data = false;
+    
+    if($requestMethod == "GET"){
+        if (isset($_COOKIE['USERSESSION'])) {
+            $token = $_COOKIE['USERSESSION'];
 
+            $data = removeSessionToken($db, null, $token);
+
+            if($data){
+                setcookie('USERSESSION', '', 0, '/', "/", true, true);
+            }
+        }
+    }
+}
 
 
 ?>
