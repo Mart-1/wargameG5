@@ -75,7 +75,7 @@ function registerAccount($conn, $firstname, $lastname, $email, $password){
         return true;
     }
     catch(PDOException $e) {
-        // echo "Error: " . $e->getMessage();
+        echo "Error: " . $e->getMessage();
         return false;
     }
 }
