@@ -27,7 +27,6 @@ if($requestResource == "login"){
         }
     }
 }
-
 if($requestResource == "register"){
     $data = false;
     if($requestMethod == "POST"){
@@ -41,18 +40,8 @@ if($requestResource == "register"){
     }
 }
 
-// if($requestResource == "resetName"){
-//     $data = false;
-
-//     if($requestMethod == "POST"){
-//         $name = $_POST['email'];
 
 
-
-
-
-//     }
-// }
 
 header('Content-Type: application/json; charset=utf-8');
 header('Cache-control: no-store, no-cache, must-revalidate');
