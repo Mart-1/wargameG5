@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column; /* Organisation en colonne */
+    min-height: 100vh; /* Assure que le body prend toute la hauteur de l'écran */
+}
+
+header {
+    background-color: #ff5722;
+    color: white;
+    text-align: center;
+    padding: 20px 10px;
+    border-bottom: 5px solid #e64a19; 
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Ecarte les éléments à gauche et à droite */
+    align-items: center; /* Centre verticalement les éléments dans le bandeau */
+    background-color: #ff5722;
+    padding: 10px;
+}
+
+nav .title {
+    font-family: 'Lobster', cursive; /* Police attrayante */
+    font-size: 2rem; /* Texte plus grand */
+    color: white; /* Texte en blanc */
+    text-align: center; /* Centrer horizontalement le texte dans l'espace attribué */
+    flex-grow: 1; /* Le titre occupe tout l'espace disponible entre les éléments */
+}
+
+nav .switch-button {
+    margin-left: auto; /* Pousse le bouton vers la droite */
+    padding: 8px 15px;
+    background-color: white;
+    color: #ff5722;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav .switch-button:hover {
+    background-color: #fff3e0;
+    color: #e64a19;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    flex-grow: 1; /* Prend tout l'espace disponible entre l'en-tête et le footer */
+    width: 800px;
+}
+
+h1 {
+    color: #ff5722;
+}
+
+button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #e64a19;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #ff5722;
+    color: white;
+}
+
+footer {
+    background-color: #ff5722;
+    padding: 10px 0;
+    text-align: center;
+    color: white;
+    font-size: 0.9rem;
+    border-top: 3px solid black; /* Bordure noire en haut du footer */
+}
+
+footer img {
+    width: 100%; /* Étire l'image sur toute la largeur du footer */
+    height: auto; /* Conserve le ratio de l'image */
+    max-height: 200px; /* Limite la hauteur de l'image */
+    object-fit: cover; /* Assure que l'image est bien cadrée */
+    border: 2px;
+}
