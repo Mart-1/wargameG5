@@ -9,7 +9,7 @@ body {
 }
 
 header {
-    background-color: #ff5722;
+    background-color: #ff7e22;
     color: white;
     text-align: center;
     padding: 20px 10px;
@@ -20,7 +20,7 @@ nav {
     display: flex;
     justify-content: space-between; /* Ecarte les éléments à gauche et à droite */
     align-items: center; /* Centre verticalement les éléments dans le bandeau */
-    background-color: #ff5722;
+    background-color: #ff7e22;
     padding: 10px;
 }
 
@@ -34,9 +34,10 @@ nav .title {
 
 nav .switch-button {
     margin-left: auto; /* Pousse le bouton vers la droite */
+    margin-right: 3px;
     padding: 8px 15px;
     background-color: white;
-    color: #ff5722;
+    color: #ff7e22;
     border: 1px solid white;
     border-radius: 5px;
     cursor: pointer;
@@ -61,11 +62,11 @@ nav .switch-button:hover {
 }
 
 h1 {
-    color: #ff5722;
+    color: #ff7e22;
 }
 
 button {
-    background-color: #ff5722;
+    background-color: #ff7e22;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -98,12 +99,12 @@ table th, table td {
 }
 
 table th {
-    background-color: #ff5722;
+    background-color: #ff7e22;
     color: white;
 }
 
 footer {
-    background-color: #ff5722;
+    background-color: #ff7e22;
     padding: 10px 0;
     text-align: center;
     color: white;
