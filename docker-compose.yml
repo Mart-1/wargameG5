@@ -6,6 +6,8 @@ services:
       - "8080:80"
     volumes:
       - ./src:/var/www/html
+      # Add a flag.txt file to /etc/flag.txt
+      - ./files/flag.txt:/etc/flag.txt
     depends_on:
       - db
     restart: unless-stopped

@@ -75,7 +75,7 @@ function registerAccount($conn, $firstname, $lastname, $email, $password){
         return true;
     }
     catch(PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        // echo "Error: " . $e->getMessage();
         return false;
     }
 }
@@ -139,7 +139,7 @@ function getUserMail($conn, $session_token) {
             return null;
         }
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        // echo "Error: " . $e->getMessage();
         return false;
     }
 }
@@ -161,7 +161,7 @@ function getUserProfile($conn, $email) {
             return $result;
         }
     } catch (PDOException $e) {
-        echo "Error: " . $e->getMessage();
+        // echo "Error: " . $e->getMessage();
         return false;
     }
 }

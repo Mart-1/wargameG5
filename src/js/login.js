@@ -12,5 +12,8 @@ function login(){
         if (data){
             window.location.href = "articles.html";
         }
+        else{
+            alert("Erreur de connexion, veuillez réessayer");
+        }
     });
 }
