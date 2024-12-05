@@ -10,7 +10,6 @@ $requestResource = array_shift($request);
 
 if($requestResource == "login"){
     $data = false;
-
     if($requestMethod == "POST"){
         $email = $_POST['email'];
         $password = $_POST['password'];
@@ -31,16 +30,26 @@ if($requestResource == "login"){
 
 }
 
-if($requestResource == "resetName"){
-    $data = false;
+// if($requestResource == "resetName"){
+//     $data = false;
 
-    if($requestMethod == "POST"){
-        $name = $_POST['email'];
-
-
+//     if($requestMethod == "POST"){
+//         $name = $_POST['email'];
 
 
 
-    }
+
+
+//     }
+// }
+
+header('Content-Type: application/json; charset=utf-8');
+header('Cache-control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
+if($requestMethod == 'POST'){
+    header('HTTP/1.1 200 Created');
+}else{
+    header('HTTP/1.1 200 OK');
 }
+echo json_encode($data);
 ?>
