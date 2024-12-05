@@ -4,8 +4,10 @@ function cookieCheck() {
     $.ajax('../php/info.php/isSetCookie', {
         method: 'GET',
     }).done(function (data) {
-        if (data == false)
-        window.location.replace("127.0.0.1:8080/src/html/login.html");  
+        if (data == false){
+            disconnect();
+        }
+        
     });
 }
 
@@ -14,6 +16,8 @@ function disconnect() {
     $.ajax('../php/info.php/disconnect', {
         method: 'GET',
     }).done(function (data) {
-        window.location.replace("127.0.0.1:8080/src/html/login.html");  
+        window.location.href = 'login.html';
     });    
 }
+
+setInterval(cookieCheck, 700);

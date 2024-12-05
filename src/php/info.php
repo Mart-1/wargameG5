@@ -10,7 +10,7 @@ $requestResource = array_shift($request);
 
 
 
-if($requestResource == "cookieCheck"){
+if($requestResource == "isSetCookie"){
     $data = false;
 
     if($requestMethod == "GET"){
@@ -39,5 +39,13 @@ if($requestResource == "disconnect"){
     }
 }
 
-
+header('Content-Type: application/json; charset=utf-8');
+header('Cache-control: no-store, no-cache, must-revalidate');
+header('Pragma: no-cache');
+if($requestMethod == 'POST'){
+    header('HTTP/1.1 200 Created');
+}else{
+    header('HTTP/1.1 200 OK');
+}
+echo json_encode($data);
 ?>
