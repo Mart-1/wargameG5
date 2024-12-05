@@ -13,9 +13,7 @@ function dbConnect(){
     return $conn;
 }
 
-$db = dbConnect();
-
-function connectionAccount($conn, $mail, $password) {
+function connectionAccount($conn, $email, $password) {
     try{
         $sql = "SELECT * FROM utilisateurs WHERE email = '$email'";
         $stmt = $conn->prepare($sql);
@@ -26,6 +24,9 @@ function connectionAccount($conn, $mail, $password) {
         if ($result) {
             if (password_verify($password, $result["password"])) {
                 return true;
+            }
+            else {
+                return false;
             }
         }
         else {

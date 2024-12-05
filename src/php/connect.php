@@ -23,7 +23,7 @@ if($requestResource == "login"){
             $expirationDate = strtotime('+1 days', strtotime(gmdate('Y-m-d H:i:s', time())));
            
             insertSessionToken($db, $email, $token_hash);
-            setcookie('USERSESSION', $token_hash, $expirationDate, '/', "/", true, true);
+            setcookie('USERSESSION', $token_hash, $expirationDate, '/', "localhost", true, true);
         }
     }
 

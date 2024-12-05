@@ -5,11 +5,11 @@ function login(){
     console.log(password);
 
     $.ajax('../php/connect.php/login', {
-    method : 'POST', data : {
-        email : email,
-        password : password,
-    }
+        method : 'POST', data : {
+            email : email,
+            password : password,
+        }
     }).done(function(data){
-    window.location.href = "articles.html";
-});
+        // window.location.href = "articles.html";
+    });
 }
