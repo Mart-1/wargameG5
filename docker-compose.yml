@@ -6,4 +6,31 @@ services:
       - "8080:80"
     volumes:
       - ./src:/var/www/html
+    depends_on:
+      - db
     restart: unless-stopped
+    environment:
+      - DB_HOST=db
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=root
+      - DB_NAME=wargame
+
+  db:
+    image: postgres:15-alpine
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      # Mount initialization scripts
+      - ./database/init:/docker-entrypoint-initdb.d
+    environment:
+      - POSTGRES_DB=wargame
+      - POSTGRES_USER=root
+      - POSTGRES_PASSWORD=root
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+
+  
