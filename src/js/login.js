@@ -1,8 +1,7 @@
 function login(){
     var email = $("#mailinput").val();
-    let password = $("#passinput").val();
-    console.log(email);
-    console.log(password);
+    var password = $("#passinput").val();
+
 
     $.ajax('../php/connect.php/login', {
         method : 'POST', data : {
@@ -10,6 +9,8 @@ function login(){
             password : password,
         }
     }).done(function(data){
-        // window.location.href = "articles.html";
+        if (data){
+            window.location.href = "articles.html";
+        }
     });
 }
