@@ -17,12 +17,6 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 # Install PHP extensions including PostgreSQL support
 RUN docker-php-ext-install pdo pdo_pgsql pgsql
 
-# Add a flag.txt file to the etc directory
-RUN echo "Flag{dockerfile}" > /etc/flag.txt
-
-# Get the flag.txt file
-RUN cat /etc/flag.txt
-
 # Set working directory
 WORKDIR /var/www/html
 
