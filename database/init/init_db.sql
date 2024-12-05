@@ -1,4 +1,3 @@
--- Création de la table utilisateurs
 CREATE TABLE utilisateurs (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
@@ -7,7 +6,6 @@ CREATE TABLE utilisateurs (
     password VARCHAR(512) NOT NULL
 );
 
--- Création de la table produits
 CREATE TABLE produits (
     id SERIAL PRIMARY KEY,
     nom VARCHAR(50) NOT NULL,
@@ -15,8 +13,21 @@ CREATE TABLE produits (
     prix VARCHAR(50) NOT NULL
 );
 
--- Insertion de données dans la table produits
+CREATE TABLE commandes (
+    id SERIAL PRIMARY KEY,
+    utilisateur_id INT NOT NULL,
+    nombre_pain INT,
+    nombre_potiron INT,
+    nombre_mandarines INT,
+    CONSTRAINT fk_utilisateur
+        FOREIGN KEY (utilisateur_id)
+        REFERENCES utilisateurs(id)
+);
+
 INSERT INTO produits (nom, description, prix) VALUES
 ('Pain', 'Un pain frais cuit au four', '2.50€'),
 ('Potirons', 'Potirons de saison, parfaits pour la soupe', '3.00€'),
 ('Mandarines', 'Mandarines juteuses et sucrées', '4.00€');
+
+INSERT INTO utilisateurs(nom, prenom, email, password) VALUES
+('root', 'root', 'root', 'root');
