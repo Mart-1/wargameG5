@@ -26,8 +26,19 @@ if($requestResource == "login"){
             setcookie('USERSESSION', $token_hash, $expirationDate, '/', "localhost", true, true);
         }
     }
+}
 
+if($requestResource == "register"){
+    $data = false;
+    if($requestMethod == "POST"){
+        $firstname = $_POST['firstname'];
+        $lastname = $_POST['lastname'];
+        $email = $_POST['email'];
+        $password = $_POST['password'];
 
+        $password_hash = password_hash($password, PASSWORD_DEFAULT);
+        $data = registerAccount($db, $firstname, $lastname, $email, $password_hash);
+    }
 }
 
 // if($requestResource == "resetName"){
