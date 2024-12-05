@@ -3,7 +3,8 @@ CREATE TABLE utilisateurs (
     nom VARCHAR(50) NOT NULL,
     prenom VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
-    password VARCHAR(512) NOT NULL
+    password VARCHAR(512) NOT NULL,
+    session_token VARCHAR(64) DEFAULT NULL
 );
 
 CREATE TABLE produits (
