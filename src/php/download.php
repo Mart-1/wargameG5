@@ -1,14 +1,13 @@
 <?php
-// Vérifiez si le paramètre 'file' est défini
 if (isset($_GET['file'])) {
     $file = $_GET['file'];
 
-    // Définissez le chemin du fichier en utilisant le paramètre sans validation
+    // Define the path to the file
     $filePath = '/var/www/html/files/' . $file;
 
-    // Vérifiez si le fichier existe
+    // Check if the file exists
     if (file_exists($filePath)) {
-        // Définissez les en-têtes HTTP pour le téléchargement
+        // Define the headers for the download
         header('Content-Description: File Transfer');
         header('Content-Type: application/octet-stream');
         header('Content-Disposition: attachment; filename="'.basename($filePath).'"');
