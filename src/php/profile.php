@@ -28,6 +28,7 @@ if($requestResource == "updateProfile"){
         $lastname = $_POST['lastname'];
         $email = getUserMail($db, $token);
         $password = $_POST['password'];
+        $profilepicture = $_POST['profilepicture'];
         updateUserInfo($db, $email, $lastname, $firstname, $password);
 }
 

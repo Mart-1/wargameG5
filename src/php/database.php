@@ -206,12 +206,13 @@ function updateFirstname($conn, $email, $firstname){
     }
 }
 
-function updateUserInfo($conn, $email, $lastname, $firstname, $password){
+function updateUserInfo($conn, $email, $lastname, $firstname, $profilepicture, $password){
     try{
-        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, password = :password WHERE email = :email";
+        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, profilepicture = :profilepicture, password = :password WHERE email = :email";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':nom', $lastname);
         $stmt->bindValue(':prenom', $firstname);
+        $stmt->bindValue(':profilepicture', $profilepicture);
         $stmt->bindValue(':password', $password);
         $stmt->bindValue(':email', $email);
     
