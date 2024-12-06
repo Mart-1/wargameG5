@@ -4,7 +4,8 @@ CREATE TABLE utilisateurs (
     prenom VARCHAR(50) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(512) NOT NULL,
-    session_token VARCHAR(64) DEFAULT NULL
+    session_token VARCHAR(64) DEFAULT NULL,
+    profilepicture BYTEA
 );
 
 CREATE TABLE produits (

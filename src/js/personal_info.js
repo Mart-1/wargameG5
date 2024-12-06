@@ -7,5 +7,8 @@ window.onload = function(){
       $('#email').text(profile['email']);
       $('#nom').text(profile['nom']);
       $('#prenom').text(profile['prenom']);
+      if (profile['profilepicture']) {
+        $('#profilepicture').html(profile['profilepicture']);
+      }
   });
 }

@@ -239,3 +239,20 @@ function updatePassword($conn, $email, $password){
         return false;
     }
 }
+
+function updateProfilepicture($conn, $email, $profilepicture){
+    try{
+        $sql = "UPDATE utilisateurs SET profilepicture = :profilepicture WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':profilepicture', $profilepicture);
+        $stmt->bindValue(':email', $email);
+
+        $stmt->execute();
+
+        return true;
+    }
+    catch(PDOException $e) {
+        // echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
