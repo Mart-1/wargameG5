@@ -101,6 +101,33 @@ function registerAccount($conn, $firstname, $lastname, $email, $password){
     }
 }
 
+function checkUser($conn, $email, $password){
+    try{
+        $sql = "SELECT * FROM utilisateurs WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':email', $email);
+        $stmt->execute();
+
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($result) {
+            if (password_verify($password, $result['password'])) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        }
+        else {
+            return false;
+        }
+    }
+    catch(PDOException $e) {
+        // echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
 function getLastname($conn, $session_token){
     try{
         $sql = "SELECT nom FROM utilisateurs WHERE session_token = :session_token";
@@ -206,14 +233,12 @@ function updateFirstname($conn, $email, $firstname){
     }
 }
 
-function updateUserInfo($conn, $email, $lastname, $firstname, $profilepicture, $password){
+function updateUserInfo($conn, $email, $lastname, $firstname){
     try{
-        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, profilepicture = :profilepicture, password = :password WHERE email = :email";
+        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom WHERE email = :email";
         $stmt = $conn->prepare($sql);
         $stmt->bindValue(':nom', $lastname);
         $stmt->bindValue(':prenom', $firstname);
-        $stmt->bindValue(':profilepicture', $profilepicture);
-        $stmt->bindValue(':password', $password);
         $stmt->bindValue(':email', $email);
     
         $stmt->execute();
@@ -221,7 +246,7 @@ function updateUserInfo($conn, $email, $lastname, $firstname, $profilepicture, $
         return true;
     }
     catch(PDOException $e) {
-    // echo "Error: " . $e->getMessage();
+        // echo "Error: " . $e->getMessage();
         return false;
     }
 }

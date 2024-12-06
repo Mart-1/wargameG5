@@ -28,8 +28,13 @@ if($requestResource == "updateProfile"){
         $lastname = $_POST['lastname'];
         $email = getUserMail($db, $token);
         $password = $_POST['password'];
-        $profilepicture = $_POST['profilepicture'];
-        updateUserInfo($db, $email, $lastname, $firstname, $password);
+
+        $check = checkUser($db, $email, $password);
+        if(!$check){
+            $data = false;
+        }else{
+            $data = updateUserInfo($db, $email, $lastname, $firstname);
+        }
 }
 
 header('Content-Type: application/json; charset=utf-8');
