@@ -206,6 +206,25 @@ function updateFirstname($conn, $email, $firstname){
     }
 }
 
+function updateUserInfo($conn, $email, $lastname, $firstname, $password){
+    try{
+        $sql = "UPDATE utilisateurs SET nom = :nom, prenom = :prenom, password = :password WHERE email = :email";
+        $stmt = $conn->prepare($sql);
+        $stmt->bindValue(':nom', $lastname);
+        $stmt->bindValue(':prenom', $firstname);
+        $stmt->bindValue(':password', $password);
+        $stmt->bindValue(':email', $email);
+    
+        $stmt->execute();
+
+        return true;
+    }
+    catch(PDOException $e) {
+    // echo "Error: " . $e->getMessage();
+        return false;
+    }
+}
+
 function updateLastname($conn, $email, $lastname){
     try{
         $sql = "UPDATE utilisateurs SET nom = :nom WHERE email = :email";
