@@ -12,35 +12,41 @@
   <nav>
     <div class="title">Vulnfood</div>
     <a href="personal_info.html" class="switch-button">Infos</a>
-    <a href="articles.html" class="switch-button">Articles</a>
-    <a href="cart.html" class="switch-button">Panier</a>
+    <a href="articles.html" class="switch-button">Menu</a>
     <a onclick="disconnect()" class="switch-button">Déconnexion</a>
   </nav>
   <div class="container">
-    <table>
-      <thead>
-        <tr>
-          <th>Article</th>
-          <th>Description</th>
-          <th>Prix</th>
-          <th>Action</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pomme</td>
-          <td>Délicieuse et juteuse</td>
-          <td>1.00 €</td>
-          <td><button>Ajouter au panier</button></td>
-        </tr>
-        <tr>
-          <td>Baguette</td>
-          <td>Croustillante et fraîche</td>
-          <td>0.80 €</td>
-          <td><button>Ajouter au panier</button></td>
-        </tr>
-      </tbody>
-    </table>
+
+    <!-- Menu du Restaurant -->
+    <h1>Menu du Restaurant</h1>
+
+    <h2>Entrées</h2>
+    <ul>
+      <li>Soupe à l'oignon - 6.50 EUR</li>
+      <li>Salade César - 7.00 EUR</li>
+      <li>Bruschetta - 5.50 EUR</li>
+    </ul>
+
+    <h2>Plats Principaux</h2>
+    <ul>
+      <li>Steak Frites - 18.00 EUR</li>
+      <li>Poulet Rôti - 15.50 EUR</li>
+      <li>Risotto aux Champignons - 14.00 EUR</li>
+    </ul>
+
+    <h2>Desserts</h2>
+    <ul>
+      <li>Tiramisu - 6.00 EUR</li>
+      <li>Crème Brûlée - 5.50 EUR</li>
+      <li>Mousse au Chocolat - 6.00 EUR</li>
+    </ul>
+
+    <h2>Boissons</h2>
+    <ul>
+      <li>Eau Minérale - 2.50 EUR</li>
+      <li>Vin Rouge (verre) - 4.00 EUR</li>
+      <li>Café Expresso - 2.00 EUR</li>
+    </ul>
 
     <!-- Menu download -->
     <button id="downloadButton" onclick="window.location.href='../php/download.php?file=menu.pdf'">
@@ -50,5 +56,6 @@
   </div>
   <footer>
     <img src="../img/image.png" alt="Footer image">
+</footer>
 </body>
 </html>
