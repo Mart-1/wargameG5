@@ -19,7 +19,7 @@ function updateProfile(){
   var lastname = $("#nom_input").val();
   // var profilepicture = $("#profile_picture_input")[0].files[0];
 
-  $.ajax('../php/database.php/updateProfile', {
+  $.ajax('../php/profile.php/updateProfile', {
     method : 'POST', 
     data : {
         password : password,
