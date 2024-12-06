@@ -12,6 +12,8 @@ Une fois le site créé, chaque groupe devra identifier et exploiter les vulnér
 
 ### Objectifs
 1. **Création de site vulnérable** 
+
+Le site présente au total 4 vulnérabilités, 3 d'entre elles permettent d'acquérir un flag pour récompenser les attaquants.
 2. **Recherche & Exploitation des vulnérabilités sur le site d'un autre groupe** 
 
 ## Technologies utilisées
@@ -49,6 +51,10 @@ docker-compose up --build
 ### 3. Accedez ensuite à l'application
 
 L'instance docker est lancée sur le port 8080 et est configurée pour être accessible depuis [http://localhost:8080/](http://localhost:8080/).
+
+## Description de l'application
+
+L'application est un site permettant visualiser les menus de notre restaurant. La page d'accueil permet la connection de l'utilisateur ou la création d'un nouveau compte utilisateur. Si l'utilisateur choisit de créer un nouveau compte, il est redirigé sur la page register.html ou il devra remplir les différents champs nécesseraires à la création d'un compte (Nom / Prénom / Mail / Mot de passe). Une fois ce compte créé, il doit aller sur la page login.html et saisir son mail ainsi que son mot de passe pour accéder à la page lui présentant le menu avec la possibilité de le télécharger.Si l'utilisateur souhaite mettre à jour ses données personelles, il peut le faire en cliquant sur le bouton Info qui le redirige sur la page personal_info.html. Il peur ici choisir de changer son nom / prénom ainsi que son mot de passe en remplissant les différents champs. 
 
 ## Auteurs
 **Groupe 5**:
