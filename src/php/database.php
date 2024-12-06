@@ -23,7 +23,7 @@ function connectionAccount($conn, $email, $encodedPasswd) {
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
 
         if ($result) {
-            if ($result['password'] == $encodedPasswd) {
+            if (password_verify($encodedPasswd, $result['password'])) {
                 return $result;
             }
             else {

@@ -32,5 +32,5 @@ INSERT INTO produits (nom, description, prix) VALUES
 
 INSERT INTO utilisateurs(nom, prenom, email, password) VALUES
 ('Flag{2nd_0rder_SQLi_1s_fun}', 'Flag{2nd_0rder_SQLi_1s_fun}', 'Flag{2nd_0rder_SQLi_1s_fun}', 'Flag{2nd_0rder_SQLi_1s_fun}'),
-('Flag{D3fault_@dmin_Cr3ds}', 'Flag{D3fault_@dmin_Cr3ds}', 'admin', '$2y$10$d/0Auyvcgg4QynqdLys/sO233uUxAhM8vMoHQcSUeQM3s1zJAl.AW'),
+('Flag{D3fault_@dmin_Cr3ds}', 'Flag{D3fault_@dmin_Cr3ds}', 'Vulnfood', '$2y$10$MSE1OloZlt0EKw2VQC3y/O5ZGYBV0UGe7c1r46oQACVZZYBAGoa7C'),
 ('lobel', 'martin', 'martin@gmail.com', '$2y$10$1PaubEeosNqdTRwgTCIPjOp/0kZLGC7dZn9Gi26hr3X8Lach/Sim2');
